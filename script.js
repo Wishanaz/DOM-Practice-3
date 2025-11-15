@@ -59,9 +59,18 @@ const pslTeams = [
   }
 ];
 
-btn.addEventListener("click", function(){
-    let random = Math.floor(Math.random() * pslTeams.length);
+let random = 0;
+teamNameEl.innerText = pslTeams[random].team;
+fullNameEl.innerText = pslTeams[random].fullName;
+captainEl.innerText = "Captain: " + pslTeams[random].captain;
+trophiesEl.innerText = "Trophies: " + pslTeams[random].trophies;
+mainEl.style.backgroundColor = pslTeams[random].primary;
+mainEl.style.color = pslTeams[random].secondary;
 
+
+btn.addEventListener("click", function(){
+    random = Math.floor(Math.random() * pslTeams.length);
+    
     teamNameEl.innerText = pslTeams[random].team;
     fullNameEl.innerText = pslTeams[random].fullName;
     captainEl.innerText = "Captain: " + pslTeams[random].captain;
